@@ -17,3 +17,5 @@ sources:
                 period: day
             loaded_at_field: o_orderdate::timestamp_ntz
         - name: suppliers
+
+        - name: lineitems

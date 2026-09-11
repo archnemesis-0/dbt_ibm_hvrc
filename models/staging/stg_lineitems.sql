@@ -1,7 +1,6 @@
-
 with source as (
 
-    select * from {{ ref('stg_lineitems') }}
+    select * from {{ source('src', 'lineitems') }}
 
 ),
 
@@ -21,11 +20,9 @@ changed as (
         
         -- numbers
         l_quantity as quantity,
-        l_extendedprice as extended_price_usd,
-        l_extenedprice*0.86 as extended_price_eur,
+        l_extendedprice as extended_price,
         l_discount as discount_percentage,
-        l_tax as tax_rate_usd,
-        l_tax*0.86 as tax_rate_eur,
+        l_tax as tax_rate,
         
         -- status
         l_linestatus as status_code,
