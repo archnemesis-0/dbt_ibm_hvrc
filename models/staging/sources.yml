@@ -5,6 +5,11 @@ sources:
     tables:
         - name: regions
         - name: nations
+          columns:
+            - name: n_nationkey
+              data_tests:
+                - unique
+                - not_null
         - name: customers
         - name: orders
           config:

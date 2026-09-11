@@ -1,4 +1,9 @@
-{{config(materialized='table')}}--config block--
+{{
+    config
+        (
+            materialized='incremental', unique_key='customer_id'
+        )
+}}--config block--
 
 with customers as(
 select c.*, r.name as region_name,n.name as nation_name 

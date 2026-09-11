@@ -13,14 +13,14 @@ models:
           - relationships:
               arguments: 
                 to: ref('stg_regions')
-                field: field_name
+                field: region_id
   - name: stg_regions
     columns: 
       - name: name
         data_tests:
           - accepted_values:
               arguments:
-                values: ['AMERICA','ASIA','EUROPE','AFRICA']
+                values: ['AMERICA','ASIA','EUROPE','AFRICA','MIDDLE EAST']
               config:
                 store_failures: true
   - name: stg_orders
@@ -29,6 +29,6 @@ models:
         data_tests:
           - order_values:
               arguments:
-                v: 1000
+                v: -10
               config:
                 store_failures: true
